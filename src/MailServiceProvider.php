@@ -13,29 +13,16 @@ use Swift_Mailer;
 class MailServiceProvider extends LaravelMailServiceProvider
 {
 
-
-    public function register()
+    protected function registerIlluminateMailer()
     {
-        parent::register();
-        if ($this->app['config']['mail.driver'] == 'custom-mailer') {
-            $this->registerCustomSwiftMailer();
-        }
-    }
-
-    private function registerCustomSwiftMailer()
-    {
-
-
-
+        parent::registerIlluminateMailer();
         $this->app->extend('swift.transport', function (TransportManager $transport) {
             $driver = 'custom-mailer';
             $callback = new CustomMailDriver();
             $transport->extend($driver, $callback($transport));
             return $transport;
         });
-
-
-
-
     }
+
+
 }
