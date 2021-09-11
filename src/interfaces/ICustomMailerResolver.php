@@ -4,9 +4,11 @@
 namespace Crystoline\CustomMailProvider\Interfaces;
 
 
+use Illuminate\Mail\Transport\Transport;
+
 interface ICustomMailerResolver
 {
 
-    function resolve() : ICustomMailer;
+    function resolve() : Transport;
 
 }

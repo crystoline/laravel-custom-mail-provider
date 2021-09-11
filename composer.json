@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^7.3",
-        "laravel/laravel": "^v7.12.0"
+        "laravel/framework": ">v5.5.0"
     },
     "require-dev": {
         "orchestra/testbench": "~3.0",
@@ -28,7 +28,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Crystoline\\Translation\\Tests\\": "tests/"
+
         }
     },
     "minimum-stability": "stable",
