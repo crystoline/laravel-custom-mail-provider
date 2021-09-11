@@ -16,7 +16,7 @@ class MailServiceProvider extends LaravelMailServiceProvider
 
     public function register()
     {
-        parent::registerSwiftMailer();
+        parent::register();
         if ($this->app['config']['mail.driver'] == 'custom-mailer') {
             $this->registerCustomSwiftMailer();
         }
@@ -25,9 +25,7 @@ class MailServiceProvider extends LaravelMailServiceProvider
     private function registerCustomSwiftMailer()
     {
 
-        parent::registerIlluminateMailer();
 
-        parent::registerMarkdownRenderer();
 
         $this->app->extend('swift.transport', function (TransportManager $transport) {
             $driver = 'custom-mailer';
