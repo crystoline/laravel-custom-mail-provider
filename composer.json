@@ -1,0 +1,42 @@
+{
+    "name": "crystoline/laravel-custom-mail-provider",
+    "description": "Send email via custom email provider",
+    "tags": ["email", "provider", "translate", "localization", "localize", "laravel"],
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Kunle Adekoya",
+        "email": "crystoline@gmail.com"
+      }
+    ],
+    "require": {
+        "php": "^7.3",
+        "laravel/laravel": "^v7.12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "~4|~5"
+    },
+    "archive": {
+      "exclude": ["/tests"]
+    },
+    "autoload": {
+        "psr-4": {
+            "Crystoline\\CustomMailProvider\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Crystoline\\Translation\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Crystoline\\CustomMailProvider\\MailServiceProvider"
+            ]
+        }
+    }
+}
