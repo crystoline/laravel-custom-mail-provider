@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^7.3",
-        "laravel/framework": ">v5.5.0"
+        "laravel/framework": ">=v7.0.0"
     },
     "require-dev": {
         "orchestra/testbench": "~3.0",

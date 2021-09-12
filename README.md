@@ -11,7 +11,40 @@ composer require crystoline/laravel-custom-mail-provider
 ### Env
 Change MAIL_DRIVER to 'custom-mailer'
 ```dotenv
-MAIL_DRIVER=custom-mailer
+MAIL_MAILER=custom-mailer
+```
+
+Add the following to config/mail.php
+```php
+<?php
+
+return [
+    'default' => env('MAIL_MAILER', 'smtp'),
+    'mailers' => [
+        'smtp' => [
+            'transport' => 'smtp',
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
+            'timeout' => null,
+            'auth_mode' => null,
+        ],
+        #### Add this
+        'custom-mailer' => [
+            'transport' => 'crystoline'
+        ]
+        
+        ####
+
+        
+    ],
+
+    
+
+];
+
 ```
 
 
